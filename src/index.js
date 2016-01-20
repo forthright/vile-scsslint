@@ -27,28 +27,28 @@ let scsslint = (custom_config_path) => {
     })
 }
 
-let to_vile_issue = (severity="") => {
-  return severity.toLowerCase() == "warning" ?
-    vile.WARNING : vile.ERROR
-}
+let to_vile_issue = (severity="") =>
+  severity.toLowerCase() == "warning" ?
+    vile.STYL : vile.ERR
 
-let vile_issue = (issue, file) => {
-  return vile.issue(
-    to_vile_issue(issue.severity),
-    file,
-    `${issue.reason} (${issue.linter})`,
-    { line: issue.line, character: issue.column }
-  )
-}
+let vile_issue = (issue, file) =>
+  vile.issue({
+    type: to_vile_issue(issue.severity),
+    path: file,
+    title: `${issue.reason} (${issue.linter})`,
+    message: `${issue.reason} (${issue.linter})`,
+    signature: `scsslint::${issue.linter}`,
+    where: {
+      start: { line: issue.line, character: issue.column }
+    }
+  })
 
-let punish = (plugin_config) => {
-  return scsslint(_.get(plugin_config, "config"))
-    .then((issues_per_file) => {
-      return _.flatten(_.map(issues_per_file, (per_file, file) => {
-        return _.map(per_file, (issue) => vile_issue(issue, file))
-      }))
-    })
-}
+let punish = (plugin_config) =>
+  scsslint(_.get(plugin_config, "config"))
+    .then((issues_per_file) =>
+      _.flatten(_.map(issues_per_file, (per_file, file) =>
+        _.map(per_file, (issue) => vile_issue(issue, file))
+      )))
 
 module.exports = {
   punish: punish
