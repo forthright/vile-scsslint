@@ -1,6 +1,6 @@
 {
   "name": "@forthright/vile-scsslint",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A vile plugin for scss-lint",
   "main": "lib/index.js",
   "scripts": {
