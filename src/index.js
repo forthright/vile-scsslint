@@ -17,7 +17,8 @@ let scsslint = (custom_config_path) => {
 
   return vile
     .spawn(scsslint_bin, opts)
-    .then((stdout) => {
+    .then((spawn_data) => {
+      let stdout = _.get(spawn_data, "stdout")
       try {
         return JSON.parse(stdout)
       } catch (e) {
