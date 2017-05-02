@@ -1,5 +1,5 @@
 let _ = require("lodash")
-let vile = require("@forthright/vile")
+let vile = require("vile")
 const scsslint_bin = "scss-lint"
 
 // TODO: support custom ignoring via config
