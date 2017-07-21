@@ -1,6 +1,7 @@
 # vile-scsslint
 
-A [Vile](http://vile.io) plugin for [SCSS-Lint](https://github.com/brigade/scss-lint).
+A [Vile](http://vile.io) plugin for identifying common style
+and maintainability issues in your Sass files (via [SCSS-Lint](https://github.com/brigade/scss-lint)).
 
 **NOTICE**
 
@@ -10,14 +11,12 @@ alternative to switch to, please open an issue and ask!
 
 ## Requirements
 
-- [nodejs](http://nodejs.org)
-- [npm](http://npmjs.org)
-- [ruby](http://nodejs.org)
-- [rubygems](http://rubygems.org)
+- [Node.js](http://nodejs.org)
+- [Ruby](https://www.ruby-lang.org)
 
 ## Installation
 
-Currently, you need to have the `scsslint` CLI installed globally.
+Currently, you need to have the `scss_lint` CLI installed globally.
 
 Example:
 
@@ -37,7 +36,7 @@ scsslint:
 
 ## Versioning
 
-This project ascribes to [semantic versioning](http://semver.org).
+This project uses [Semver](http://semver.org).
 
 ## Licensing
 
@@ -64,13 +63,7 @@ Even if you are uncomfortable with code, an issue or question is welcome.
 
 ### Code Of Conduct
 
-This project ascribes to [contributor-covenant.org](http://contributor-covenant.org).
-
 By participating in this project you agree to our [Code of Conduct](CODE_OF_CONDUCT.md).
-
-### Maintainers
-
-- Nothing to see here...
 
 ## Architecture
 
@@ -78,7 +71,7 @@ This project is currently written in JavaScript. `scss_lint` provides
 a JSON CLI output that is currently used until a more ideal
 IPC option is implemented.
 
-## Hacking
+## Developing
 
     cd vile-scsslint
     npm install

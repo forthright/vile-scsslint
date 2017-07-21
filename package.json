@@ -1,7 +1,7 @@
 {
   "name": "vile-scsslint",
   "version": "0.3.2",
-  "description": "A vile plugin for scss-lint",
+  "description": "Identify common style and maintainability issues in your Sass files.",
   "main": "lib/index.js",
   "files": [
     "lib",
